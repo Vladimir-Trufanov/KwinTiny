@@ -5,8 +5,7 @@
 
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>KwinFlat-редактор текстов!</title>
-   <link rel="stylesheet" type="text/css" href="Allcss/Reset.css" />
+   <title>KwinTiny-редактор материалов!</title>
    <script src="/TinyMCE/tinymce.min.js"></script>
    <script>tinymce.init
     ({
