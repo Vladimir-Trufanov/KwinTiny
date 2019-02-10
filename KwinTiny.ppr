@@ -17,14 +17,15 @@ Extensions=*.*
 [Project tree]
 KwinTiny
 	+www
-		-Images
+		+Images
 			www\Images\Kwinflat.jpg
-		-KwinTiny
-			-Arc
+		+KwinTiny
+			+Arc
+				www\KwinTiny\Arc\proba.jpg
 				www\KwinTiny\Arc\textfile.html
 			-Temp
 		+TinyMCE
-			+langs
+			-langs
 				www\TinyMCE\langs\readme.md
 				www\TinyMCE\langs\ru.js
 			-plugins
@@ -252,41 +253,18 @@ KwinTiny
 			www\TinyMCE\jquery.tinymce.min.js
 			www\TinyMCE\KwinTiny.css
 			www\TinyMCE\license.txt
-			www\TinyMCE\proba.jpg
 			www\TinyMCE\Styles.css
-			www\TinyMCE\textfile.html
+			www\TinyMCE\Tiny.php
 			www\TinyMCE\TinyMCE.css
 			www\TinyMCE\tinymce.js
 			www\TinyMCE\tinymce.min.js
-			www\TinyMCE\TinyOpen.php
-			www\TinyMCE\TinySave.php
 		www\favicon.ico
 		www\index.php
 [Open project files]
 0=www\index.php
-1=www\TinyMCE\TinyOpen.php
-2=www\TinyMCE\TinySave.php
-3=www\TinyMCE\Styles.css
-4=www\TinyMCE\KwinTiny.css
-5=www\TinyMCE\TinyMCE.css
 [Selected Project Files]
 Main=
-Selected=www\TinyMCE\TinyOpen.php
+Selected=www\index.php
 [www\index.php]
 TopLine=1
-Caret=1,15
-[www\TinyMCE\TinyOpen.php]
-TopLine=65
-Caret=1,19
-[www\TinyMCE\TinySave.php]
-TopLine=15
-Caret=47,16
-[www\TinyMCE\Styles.css]
-TopLine=11
-Caret=25,76
-[www\TinyMCE\KwinTiny.css]
-TopLine=1
-Caret=1,2
-[www\TinyMCE\TinyMCE.css]
-TopLine=1
-Caret=1,7
+Caret=21,12

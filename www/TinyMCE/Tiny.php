@@ -1,3 +1,17 @@
+<?php
+
+// Записываем материал в файл при запросе 
+if(isset($_POST['enter']))
+{
+   // Открыть текстовый файл
+   $f = fopen("../KwinTiny/Arc/textfile.html","w");
+   // Записать текст
+   fwrite($f, $_POST['dor']); 
+   // Закрыть текстовый файл
+   fclose($f);
+}
+?>
+
 <!DOCTYPE html>
 <!-- 
 -->
@@ -59,7 +73,7 @@
       // echo '888'.$contents.'999';
       ?>
       
-      <form id="frmTinyText" method="post" action="/TinyMCE/TinySave.php">
+      <form id="frmTinyText" method="post" action="/TinyMCE/Tiny.php">
          <textarea id="mytextarea" name="dor">
          <?php
             echo htmlspecialchars($contents);
