@@ -16,11 +16,15 @@ HTServer=localhost
 Extensions=*.*
 [Project tree]
 KwinTiny
-	-www
+	+www
 		-Images
 			www\Images\Kwinflat.jpg
-		-TinyMCE
-			-langs
+		-KwinTiny
+			-Arc
+				www\KwinTiny\Arc\textfile.html
+			-Temp
+		+TinyMCE
+			+langs
 				www\TinyMCE\langs\readme.md
 				www\TinyMCE\langs\ru.js
 			-plugins
@@ -246,28 +250,43 @@ KwinTiny
 					www\TinyMCE\themes\silver\theme.js
 					www\TinyMCE\themes\silver\theme.min.js
 			www\TinyMCE\jquery.tinymce.min.js
+			www\TinyMCE\KwinTiny.css
 			www\TinyMCE\license.txt
 			www\TinyMCE\proba.jpg
+			www\TinyMCE\Styles.css
 			www\TinyMCE\textfile.html
-			www\TinyMCE\Tiny.php
 			www\TinyMCE\TinyMCE.css
 			www\TinyMCE\tinymce.js
 			www\TinyMCE\tinymce.min.js
-			www\TinyMCE\TinyText.php
+			www\TinyMCE\TinyOpen.php
+			www\TinyMCE\TinySave.php
+		www\favicon.ico
 		www\index.php
 [Open project files]
 0=www\index.php
-1=www\TinyMCE\Tiny.php
-2=www\TinyMCE\TinyText.php
+1=www\TinyMCE\TinyOpen.php
+2=www\TinyMCE\TinySave.php
+3=www\TinyMCE\Styles.css
+4=www\TinyMCE\KwinTiny.css
+5=www\TinyMCE\TinyMCE.css
 [Selected Project Files]
 Main=
-Selected=www\TinyMCE\Tiny.php
+Selected=www\TinyMCE\TinyOpen.php
 [www\index.php]
 TopLine=1
-Caret=1,14
-[www\TinyMCE\Tiny.php]
-TopLine=5
-Caret=39,8
-[www\TinyMCE\TinyText.php]
-TopLine=9
-Caret=1,1
+Caret=1,15
+[www\TinyMCE\TinyOpen.php]
+TopLine=65
+Caret=1,19
+[www\TinyMCE\TinySave.php]
+TopLine=15
+Caret=47,16
+[www\TinyMCE\Styles.css]
+TopLine=11
+Caret=25,76
+[www\TinyMCE\KwinTiny.css]
+TopLine=1
+Caret=1,2
+[www\TinyMCE\TinyMCE.css]
+TopLine=1
+Caret=1,7
