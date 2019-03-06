@@ -1,0 +1,41 @@
+[Config]
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.CompileOnBackground=0
+Compilator.ProgSaveAll=0
+Compilator.ProgRunSelection=0
+Compilator.LogType=0
+DefaultDir=C:\Webservers\UploadR
+DefaultCP=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+Extensions=*.*
+[Project tree]
+UploadR
+	+UploadR
+		+www
+			www\.htaccess
+			www\favicon.ico
+			www\index.html
+			www\style.css
+			www\upload.php
+		UploadR.ppr
+[Open project files]
+0=www\index.html
+1=www\style.css
+2=www\upload.php
+[Selected Project Files]
+Main=
+Selected=www\index.html
+[www\index.html]
+TopLine=65
+Caret=29,83
+[www\style.css]
+TopLine=3
+Caret=1,23
+[www\upload.php]
+TopLine=1
+Caret=83,14
