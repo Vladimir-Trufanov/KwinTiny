@@ -1,0 +1,36 @@
+[Config]
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.CompileOnBackground=0
+Compilator.ProgSaveAll=0
+Compilator.ProgRunSelection=0
+Compilator.LogType=0
+DefaultDir=C:\Webservers\KwinTiny\DropZone\www
+DefaultCP=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+HTServer=localhost
+Extensions=*.*
+[Project tree]
+Dropzone
+	+www
+		-uploads
+		www\dropzone.css
+		www\dropzone.js
+		www\index.html
+		www\upload.php
+[Open project files]
+0=www\index.html
+1=www\upload.php
+[Selected Project Files]
+Main=
+Selected=www\upload.php
+[www\index.html]
+TopLine=23
+Caret=3,41
+[www\upload.php]
+TopLine=11
+Caret=1,15
