@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta charset="utf-8">
+   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
    <title>Dropzone-PHP Загрузка файлов </title>  
    <link href="/dropzone.css" type="text/css" rel="stylesheet" />
     
@@ -9,6 +9,28 @@
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous">
+   </script>
+   
+   <script>
+   $(document).ready(
+   function( ) {
+   
+   var str=
+   '<section style="'+
+   'position: fixed;'+ 
+   'overflow: auto;'+ 
+   'text-align: right;'+
+   'top: 0;'+ 
+   'right: 0;'+
+   'width: 100%;'+ 
+   'color: red;'+
+   '">'+
+   'b Физико-математический "факультет" ПетрГУ (ПГУ им.О.В.Кусинена в моё время)<br>'+
+   'наложил на меня отпечаток.'+ 
+   '</section>';
+      
+   $('body').append(str); 
+   });
    </script>
       
    <script src="dropzone.js"></script>
@@ -46,5 +68,10 @@ Dropzone.options.myDropzone =
 <body>
    Привет!
    <form action="upload.php" class="dropzone" id="my-dropzone"></form>
+   Пока!<br>
+   
+<!--     
+-->
+
 </body>
 </html>

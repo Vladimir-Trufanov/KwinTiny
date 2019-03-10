@@ -9,7 +9,7 @@ if (!empty($_FILES))
     $targetPath = dirname( __FILE__ ) . $ds. $storeFolder . $ds;
     $targetFile =  $targetPath. $_FILES['file']['name'];
     // Перемещаем загруженные файлы из временного хранилища в нашу папку uploads
-    move_uploaded_file($tempFile,$targetFile); 
+    move_uploaded_file($tempFile,$targetFile);
 }
 
 /*

@@ -23,14 +23,14 @@ Dropzone
 		www\index.html
 		www\upload.php
 [Open project files]
-0=www\index.html
-1=www\upload.php
+0=www\upload.php
+1=www\index.html
 [Selected Project Files]
 Main=
-Selected=www\upload.php
-[www\index.html]
-TopLine=23
-Caret=3,41
+Selected=www\index.html
 [www\upload.php]
-TopLine=11
-Caret=1,15
+TopLine=3
+Caret=1,13
+[www\index.html]
+TopLine=14
+Caret=85,28
