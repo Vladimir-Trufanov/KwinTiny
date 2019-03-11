@@ -1,10 +1,21 @@
 <?php
 
+// Инициализируем корневой каталог сайта, надсайтовый каталог, 
+// каталог хостинга и другие каталоги
+require_once "iGetAbove.php";
+$SiteRoot = $_SERVER['DOCUMENT_ROOT'];  // Корневой каталог сайта
+$SiteAbove = iGetAbove($SiteRoot);      // Надсайтовый каталог
+$SiteHost = iGetAbove($SiteAbove);      // Каталог хостинга
+$DirImg=$SiteRoot."/KwinTiny/";         // Хранилище изображений для материалов
+
+// Инициируем рабочие переменные
+require_once $SiteRoot."/TinyMCE/inimem.php";
+
 // Записываем материал в файл при запросе 
 if(isset($_POST['enter']))
 {
    // Открыть текстовый файл
-   $f = fopen("../KwinTiny/Arc/textfile.html","w");
+   $f = fopen("../KwinTiny/textfile.html","w");
    // Записать текст
    fwrite($f, $_POST['dor']); 
    // Закрыть текстовый файл
@@ -65,7 +76,7 @@ if(isset($_POST['enter']))
    <div class="InfoLeft">
       <?php
       // Извлекаем прежнее содержимое материала в переменную
-      $filename="../KwinTiny/Arc/textfile.html";
+      $filename=$DirImg."textfile.html"; 
       $handle = fopen($filename, "r");
       $contents = fread($handle, filesize($filename));
       fclose($handle);
@@ -83,7 +94,17 @@ if(isset($_POST['enter']))
    </div>
    
    <div class="InfoRight">
-      <input type="submit" name='enter' value="Сохранить материал" form="frmTinyText">
+      <p>
+         <input type="submit" name='enter' value="Сохранить материал" form="frmTinyText">
+      </p>
+      <p><?php
+         echo $SiteRoot.'<br>'; 
+         echo $SiteAbove.'<br>'; 
+         echo $SiteHost; 
+      ?></p>
+      <?php
+      require_once $SiteRoot."/TinyMCE/Upload/Upload.php";
+      ?>
    </div>
 </div>
 

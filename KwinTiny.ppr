@@ -17,18 +17,14 @@ Extensions=*.*
 [Project tree]
 KwinTiny
 	+KwinTiny
-		+DropZone
-			+www
-				DropZone\www\index.php
-				DropZone\www\php71.ini-tve
-		-www
+		+www
 			-Images
 				www\Images\Kwinflat.jpg
 			-KwinTiny
-				-Arc
-					www\KwinTiny\Arc\proba.jpg
-					www\KwinTiny\Arc\textfile.html
-				-Temp
+				www\KwinTiny\DSC0001 öâ.jpg
+				www\KwinTiny\DSC0013 öâ.jpg
+				www\KwinTiny\proba.jpg
+				www\KwinTiny\textfile.html
 			-TinyMCE
 				-langs
 					www\TinyMCE\langs\readme.md
@@ -255,6 +251,11 @@ KwinTiny
 					-silver
 						www\TinyMCE\themes\silver\theme.js
 						www\TinyMCE\themes\silver\theme.min.js
+				-Upload
+					www\TinyMCE\Upload\php71.ini-tve
+					www\TinyMCE\Upload\Upload.php
+				www\TinyMCE\iGetAbove.php
+				www\TinyMCE\inimem.php
 				www\TinyMCE\jquery.tinymce.min.js
 				www\TinyMCE\KwinTiny.css
 				www\TinyMCE\license.txt
@@ -283,10 +284,31 @@ KwinTiny
 		README.md
 		web.config
 [Open project files]
-0=DropZone\www\index.php
+0=www\TinyMCE\TinyMCE.css
+1=www\TinyMCE\Tiny.php
+2=www\TinyMCE\Styles.css
+3=www\TinyMCE\inimem.php
+4=www\TinyMCE\Upload\Upload.php
+5=www\KwinTiny\textfile.html
 [Selected Project Files]
 Main=
-Selected=DropZone\www\index.php
-[DropZone\www\index.php]
-TopLine=57
-Caret=13,60
+Selected=www\TinyMCE\Upload\Upload.php
+[www\TinyMCE\TinyMCE.css]
+TopLine=43
+Caret=1,1
+[www\TinyMCE\Tiny.php]
+TopLine=1
+Caret=32,76
+[www\TinyMCE\Styles.css]
+TopLine=23
+Caret=26,45
+[www\TinyMCE\inimem.php]
+TopLine=1
+Caret=46,5
+[www\TinyMCE\Upload\Upload.php]
+TopLine=33
+Caret=36,53
+Mark1=1,57
+[www\KwinTiny\textfile.html]
+TopLine=1
+Caret=1,1

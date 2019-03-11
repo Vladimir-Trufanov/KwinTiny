@@ -1,28 +1,15 @@
 <?php
-// PHP7/HTML5, EDGE/CHROME                               *** .php ***
+// PHP7/HTML5, EDGE/CHROME                                   *** Upload.php ***
 
 // ****************************************************************************
-// *  * 
-// *                               *
+// * KwinTiny                                 Обеспечить загрузку изображений *
+// *                                        в хранилище подготовки материалов *
 // ****************************************************************************
 
 //                                                   Автор:       Труфанов В.Е.
-//                                                   Дата создания:  07.01.2019
-// Copyright © 2019 tve                              Посл.изменение: 06.02.2019
-?>
+//                                                   Дата создания:  23.01.2019
+// Copyright © 2019 tve                              Посл.изменение: 11.03.2019
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-   <title>Загрузить изображение</title>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-   <meta name="description" content="Труфанов Владимир Евгеньевич, его жизнь и жизнь его близких">
-   <meta name="keywords" content="Труфанов Владимир Евгеньевич, жизнь и увлечения">
-</head>
-
-<body>
-
-<?php
 /**
  * Настройки конфигурации PHP, влияющие на загрузку файлов
  * (настройки находятся в разделе Core файла php.ini)
@@ -53,17 +40,16 @@
  * Максимально допустимый размер одного загружаемого файла
  * upload_max_filesize = 2M
 **/
-?>
 
-<?php
 // Устанавливаем максимальный размер загружаемых файлов в байтах
-$max = 85000;
-if (isset($_POST['UploadImg'])) {
-  // define the path to the upload folder
-  $destination = 'C:/upload_test/';
-  // move the file to the upload folder and rename it
-  move_uploaded_file($_FILES['image']['tmp_name'], $destination . $_FILES['image']['name']);
+$max = 850000;
+if (isset($_POST['UploadImg'])) 
+{
+   // move the file to the upload folder and rename it
+   // echo '***'.$destination.$_FILES['image']['name'].'***';
+   move_uploaded_file($_FILES['image']['tmp_name'], $DirImg.$_FILES['image']['name']);
 }
+//phpinfo();
 ?>
 
 <form action="" method="post" enctype="multipart/form-data" id="uploadImage">
@@ -76,6 +62,8 @@ if (isset($_POST['UploadImg'])) {
 </form>
 
 <pre>
+
+<!-- -->
 <?php
 if (isset($_POST['UploadImg'])) {
   print_r($_FILES);
@@ -83,7 +71,5 @@ if (isset($_POST['UploadImg'])) {
 ?>
 </pre>
 
-
-
-</body>
-</html>
+<?php
+// ************************************************************* Upload.php ***
