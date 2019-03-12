@@ -99,11 +99,12 @@ if(isset($_POST['enter']))
       </p>
       <p><?php
          echo $SiteRoot.'<br>'; 
+         echo 'Решение 01.1'.'<br>'; 
          echo $SiteAbove.'<br>'; 
          echo $SiteHost; 
       ?></p>
       <?php
-      require_once $SiteRoot."/TinyMCE/Upload/Upload.php";
+      require_once $SiteRoot."/TinyMCE/Upload/UploadImg.php";
       ?>
    </div>
 </div>

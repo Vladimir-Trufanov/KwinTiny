@@ -1,5 +1,5 @@
 <?php
-// PHP7/HTML5, EDGE/CHROME                                   *** Upload.php ***
+// PHP7/HTML5, EDGE/CHROME                                *** UploadImg.php ***
 
 // ****************************************************************************
 // * KwinTiny                                 Обеспечить загрузку изображений *
@@ -45,15 +45,53 @@
 $max = 850000;
 if (isset($_POST['UploadImg'])) 
 {
+   // Решение 00
    // move the file to the upload folder and rename it
    // echo '***'.$destination.$_FILES['image']['name'].'***';
-   move_uploaded_file($_FILES['image']['tmp_name'], $DirImg.$_FILES['image']['name']);
+   //move_uploaded_file($_FILES['image']['tmp_name'], $DirImg.$_FILES['image']['name']);
+
+   // Решение 01
+   $destination = $DirImg;
+   echo '***'.$destination.'***';
+   require_once $SiteRoot."/Ps2/Upload.php";
+   try 
+   {
+      $upload = new Ps2_Upload($destination);
+      $upload->move01();
+      $result = $upload->getMessages();
+   } 
+   catch (Exception $e) 
+   {
+      echo $e->getMessage();
+   }
 }
 //phpinfo();
+
+// Выводим возможные сообщения от объекта $upload
+if (isset($result)) 
+{
+   echo '<ul>';
+   foreach ($result as $message) 
+   {
+      echo "<li>$message</li>";
+   }
+   echo '</ul>';
+}
+
+
+
 ?>
 
 <form action="" method="post" enctype="multipart/form-data" id="uploadImage">
    <label for="image">Выбрать изображение</label>
+   <?php
+   /**
+    * Размещаем в форме поле для загрузки файла, а перед ним (иначе не будет
+    * работать) поле для контроля размера загружаемого файла. 
+    * Преимущество скрытого поля с именем MAX_FILE_SIZE в том, что PHP остановит
+    * процесс загрузки файла при превышении размера
+   **/
+   ?>
    <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $max; ?>">
    <input type="file" name="image" id="image">
    <p>
@@ -72,4 +110,4 @@ if (isset($_POST['UploadImg'])) {
 </pre>
 
 <?php
-// ************************************************************* Upload.php ***
+// ********************************************************** UploadImg.php ***

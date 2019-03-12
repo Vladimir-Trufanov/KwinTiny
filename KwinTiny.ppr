@@ -20,12 +20,15 @@ KwinTiny
 		+www
 			-Images
 				www\Images\Kwinflat.jpg
-			-KwinTiny
+			+KwinTiny
 				www\KwinTiny\DSC0001 цв.jpg
-				www\KwinTiny\DSC0013 цв.jpg
+				www\KwinTiny\DSC0005 цв.jpg
 				www\KwinTiny\proba.jpg
 				www\KwinTiny\textfile.html
-			-TinyMCE
+				www\KwinTiny\Ирригатор.jpg
+			+Ps2
+				www\Ps2\Upload.php
+			+TinyMCE
 				-langs
 					www\TinyMCE\langs\readme.md
 					www\TinyMCE\langs\ru.js
@@ -251,9 +254,9 @@ KwinTiny
 					-silver
 						www\TinyMCE\themes\silver\theme.js
 						www\TinyMCE\themes\silver\theme.min.js
-				-Upload
+				+Upload
 					www\TinyMCE\Upload\php71.ini-tve
-					www\TinyMCE\Upload\Upload.php
+					www\TinyMCE\Upload\UploadImg.php
 				www\TinyMCE\iGetAbove.php
 				www\TinyMCE\inimem.php
 				www\TinyMCE\jquery.tinymce.min.js
@@ -266,7 +269,7 @@ KwinTiny
 				www\TinyMCE\tinymce.min.js
 			www\favicon.ico
 			www\index.php
-		-Дистрибутивы
+		+Дистрибутивы
 			Дистрибутивы\tinymce_4.7.11.zip
 			Дистрибутивы\tinymce_4.9.3.zip
 			Дистрибутивы\tinymce_5.0.0_dev.zip
@@ -288,27 +291,31 @@ KwinTiny
 1=www\TinyMCE\Tiny.php
 2=www\TinyMCE\Styles.css
 3=www\TinyMCE\inimem.php
-4=www\TinyMCE\Upload\Upload.php
+4=www\TinyMCE\Upload\UploadImg.php
 5=www\KwinTiny\textfile.html
+6=www\Ps2\Upload.php
 [Selected Project Files]
 Main=
-Selected=www\TinyMCE\Upload\Upload.php
+Selected=www\TinyMCE\Upload\UploadImg.php
 [www\TinyMCE\TinyMCE.css]
 TopLine=43
 Caret=1,1
 [www\TinyMCE\Tiny.php]
-TopLine=1
-Caret=32,76
+TopLine=71
+Caret=28,102
 [www\TinyMCE\Styles.css]
 TopLine=23
 Caret=26,45
 [www\TinyMCE\inimem.php]
 TopLine=1
 Caret=46,5
-[www\TinyMCE\Upload\Upload.php]
+[www\TinyMCE\Upload\UploadImg.php]
 TopLine=33
-Caret=36,53
-Mark1=1,57
+Caret=14,45
+Mark1=1,95
 [www\KwinTiny\textfile.html]
 TopLine=1
 Caret=1,1
+[www\Ps2\Upload.php]
+TopLine=1
+Caret=1,94
