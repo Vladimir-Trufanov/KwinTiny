@@ -42,7 +42,9 @@
 **/
 
 // Устанавливаем максимальный размер загружаемых файлов в байтах
-$max = 850000;
+// (по умолчанию 300K)
+// $MaxLoadSize = 307200;
+$MaxLoadSize = 900200;
 if (isset($_POST['UploadImg'])) 
 {
    // Решение 00
@@ -57,7 +59,7 @@ if (isset($_POST['UploadImg']))
    try 
    {
       $upload = new Ps2_Upload($destination);
-      $upload->move01();
+      $upload->move();
       $result = $upload->getMessages();
    } 
    catch (Exception $e) 
@@ -92,7 +94,7 @@ if (isset($result))
     * процесс загрузки файла при превышении размера
    **/
    ?>
-   <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $max; ?>">
+   <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $MaxLoadSize; ?>">
    <input type="file" name="image" id="image">
    <p>
    <input type="submit" name="UploadImg" id="upload" value="Загрузить">

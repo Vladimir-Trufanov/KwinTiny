@@ -1,24 +1,26 @@
 <?php
 class Ps2_Upload 
 {
-	// ���������� �������� ������
-   protected $_uploaded = array();  // ������ ����������� ������ 
-   protected $_destination;         // ���� � �������� ��������
-   protected $_max = 51200;         // ������������ ������ ������������ �����
+	// Определяем свойства класса
+   protected $_uploaded = array();  // Список загруженных файлов 
+   protected $_destination;         // Путь к каталогу загрузки
+   //protected $_max = 307200;        // Максимальный размер файла = 300Kb
+   protected $_max = 900200;        // Максимальный размер загружаемого файла
    protected $_messages = array();
-   protected $_permitted = array    // ������ MIME-����� �����������
+   protected $_permitted = array    // массив MIME-типов изображений
    (
       'image/gif',
 		'image/jpeg',
+		'image/jpg',
 		'image/pjpeg',
 		'image/png'
    );
    protected $_renamed = false;
    protected $_filenames = array();
 
-   // ������� �������� (���������) �����-����������� ������:
-   // ��������� ���� � �������� �������� � ������ ������, ����������� ��
-   // ��������� ��������� �������
+   // Готовим открытый (публичный) метод-конструктор класса:
+   // принимаем путь к каталогу загрузки и список файлов, загруженных во
+   // временный системный каталог
    public function __construct($path) 
    {
       if (!is_dir($path) || !is_writable($path)) 
@@ -28,10 +30,12 @@ class Ps2_Upload
 	  $this->_destination = $path;
 	  $this->_uploaded = $_FILES;
    }
-
-  public function getMaxSize() {
-	return number_format($this->_max/1024, 1) . 'kB';
-  }
+   
+   // Привести размер файла к сокращенному виду
+   public function getMaxSize() 
+   {
+      return number_format($this->_max/1024,1).'Kb';
+   }
 
   public function setMaxSize($num) {
 	if (!is_numeric($num)) {
@@ -40,49 +44,35 @@ class Ps2_Upload
 	$this->_max = (int) $num;
   }
 
-   // ���������� ����� �� ���������� ���������� �������� 
-   // � ������� ��� ����������� ������
-   public function move($overwrite = false) 
+   // Перемещаем файлы из временного системного каталога 
+   // в каталог для загруженных файлов
+   public function move() 
    {
       $field = current($this->_uploaded);
-      if (is_array($field['name'])) 
+      $OK = $this->checkError($field['name'], $field['error']);
+      if ($OK) 
       {
-         foreach ($field['name'] as $number => $filename) 
+         $sizeOK = $this->checkSize($field['name'], $field['size']);
+         $typeOK = $this->checkType($field['name'], $field['type']);
+         if ($sizeOK && $typeOK) 
          {
-            // process multiple upload
-            $this->_renamed = false;
-            $this->processFile($filename, 
-               $field['error'][$number], 
-               $field['size'][$number], 
-               $field['type'][$number], 
-               $field['tmp_name'][$number], 
-               $overwrite);
+            $success = 
+            move_uploaded_file
+            (
+               $field['tmp_name'], 
+               $this->_destination.$field['name']
+            );
+            if ($success)
+            {
+               $this->_messages[] = 
+               "Файл ".$field['name'].' загружен успешно';
+            }
+            else
+            {
+               $this->_messages[] = 
+               'Не удалось загрузить файл '.$field['name'];
+            }
          }
-      } 
-      else 
-      {
-         $this->processFile(
-            $field['name'], 
-            $field['error'], 
-            $field['size'], 
-            $field['type'], 
-            $field['tmp_name'], 
-            $overwrite);
-      }
-   }
-   
-   
-   public function move01() 
-   {
-      $field = current($this->_uploaded);
-      $success = move_uploaded_file($field['tmp_name'], $this->_destination . $field['name']);
-      if ($success) 
-      {
-         $this->_messages[] = $field['name'] . ' uploaded successfully';
-      } 
-      else 
-      {
-         $this->_messages[] = 'Could not upload ' . $field['name'];
       }
    }
    
@@ -90,48 +80,97 @@ class Ps2_Upload
    {
       return $this->_messages;
    }
-
-  protected function checkError($filename, $error) {
-	switch ($error) {
-	  case 0:
-		return true;
-	  case 1:
-	  case 2:
-	    $this->_messages[] = "$filename exceeds maximum size: " . $this->getMaxSize();
-		return true;
-	  case 3:
-		$this->_messages[] = "Error uploading $filename. Please try again.";
-		return false;
-	  case 4:
-		$this->_messages[] = 'No file selected.';
-		return false;
-	  default:
-		$this->_messages[] = "System error uploading $filename. Contact webmaster.";
-		return false;
-	}
-  }
-
-  protected function checkSize($filename, $size) {
-	if ($size == 0) {
-	  return false;
-	} elseif ($size > $this->_max) {
-	  $this->_messages[] = "$filename exceeds maximum size: " . $this->getMaxSize();
-	  return false;
-	} else {
-	  return true;
-	}
-  }
-  
-  protected function checkType($filename, $type) {
-	if (empty($type)) {
-	  return false;
-	} elseif (!in_array($type, $this->_permitted)) {
-	  $this->_messages[] = "$filename is not a permitted type of file.";
-	  return false;
-	} else {
-	  return true;
-	}
-  }
+   
+   // Проверить код ошибки
+   protected function checkError($filename, $error) 
+   {
+   switch ($error) 
+      {
+         case 0:
+         return true;
+         
+         case 1:
+         $this->_messages[] = 
+         "Размер файла $filename превышает максимальный размер: ". 
+         $this->getMaxSize()." или указанный в php.ini";
+         return true;
+         
+         case 2:
+         $this->_messages[] = 
+         "Размер файла $filename превышает максимальный размер: " . 
+         $this->getMaxSize()." или указанный в форме";
+         return true;
+         
+         case 3:
+         $this->_messages[] = 
+         "Файл $filename загружен частично. Пожалуйста, повторите загрузку";
+		   return false;
+         
+         case 4:
+         $this->_messages[] = 'Файл не выбран';
+         return false;
+         
+         case 6:
+         $this->_messages[] = 'Временная папка загрузки отсутствует';
+         return false;
+         
+         case 6:
+         $this->_messages[] = 'Временная папка загрузки отсутствует';
+         return false;
+         
+         case 7:
+         $this->_messages[] = 
+         "Файл $filename невозможно записать на диск";
+         return false;
+         
+         default:
+         $this->_messages[] = 
+         "Системная ошибка загрузки файла $filename. Код ошибки = $error";
+         return false;
+      }
+   }
+   
+   // Проверить размер файла
+   protected function checkSize($filename, $size) 
+   {
+      if ($size == 0) 
+      {
+         $this->_messages[] = 
+         "Файл $filename очень большой или не выбран";
+         return false;
+      } 
+      elseif ($size > $this->_max) 
+      {
+         $this->_messages[] = 
+         "Файл $filename превышает максимальный размер: ".$this->getMaxSize();
+         return false;
+      } 
+      else 
+      {
+         return true;
+      }
+   }
+   
+   // Проверить тип файла
+   protected function checkType($filename, $type) 
+   {
+      if (empty($type)) 
+      {
+         $this->_messages[] = 
+         "Не определен тип файла загрузки";
+         return false;
+      } 
+      elseif (!in_array($type, $this->_permitted)) 
+      {
+         $this->_messages[] = 
+         "Файл $filename имеет тип, неразрешенный для для загрузки";
+         return false;
+      } 
+      else 
+      {
+         return true;
+      }
+   }
 
   public function addPermittedTypes($types) {
 	$types = (array) $types;
