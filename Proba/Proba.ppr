@@ -1,0 +1,60 @@
+[Config]
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.CompileOnBackground=0
+Compilator.ProgSaveAll=0
+Compilator.ProgRunSelection=0
+Compilator.LogType=0
+DefaultDir=C:\Webservers\KwinTiny\Proba\www
+DefaultCP=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+Extensions=*.*
+[Project tree]
+Proba
+	+www
+		-images
+			-thumbs
+				www\images\thumbs\basin.jpg
+				www\images\thumbs\fountains.jpg
+				www\images\thumbs\kinkakuji.jpg
+				www\images\thumbs\maiko.jpg
+				www\images\thumbs\maiko_phone.jpg
+				www\images\thumbs\menu.jpg
+				www\images\thumbs\monk.jpg
+				www\images\thumbs\ryoanji.jpg
+				www\images\thumbs\Thumbs.db
+			www\images\basin.jpg
+			www\images\fountains.jpg
+			www\images\fuji.jpg
+			www\images\kinkakuji.jpg
+			www\images\maiko.jpg
+			www\images\maiko_phone.jpg
+			www\images\menu.jpg
+			www\images\monk.jpg
+			www\images\ryoanji.jpg
+			www\images\Thumbs.db
+		-includes
+			www\includes\footer.inc.php
+			www\includes\menu.inc.php
+			www\includes\random_image.php
+			www\includes\title.inc.php
+		-styles
+			www\styles\journey.css
+		www\blog.php
+		www\contact.php
+		www\details.php
+		www\gallery.php
+		www\get_filename.php
+		www\index.php
+[Open project files]
+0=www\index.php
+[Selected Project Files]
+Main=
+Selected=www\index.php
+[www\index.php]
+TopLine=1
+Caret=27,12
