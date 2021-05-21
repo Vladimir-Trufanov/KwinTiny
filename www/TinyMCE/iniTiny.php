@@ -31,7 +31,7 @@ require_once $SiteHost."/TDoorTryer/DoorTryerPage.php";
 try 
 {
    // Запускаем сценарий сайта
-   require_once $_SERVER['DOCUMENT_ROOT']."/TinyMCE/Main.php";
+   require_once $_SERVER['DOCUMENT_ROOT']."/Main.php";
 }
 catch (E_EXCEPTION $e) 
 {
