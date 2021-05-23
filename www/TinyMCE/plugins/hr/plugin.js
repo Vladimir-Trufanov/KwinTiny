@@ -1,50 +1,39 @@
-/**
- * Copyright (c) Tiny Technologies, Inc. All rights reserved.
- * Licensed under the LGPL or a commercial license.
- * For LGPL see License.txt in the project root for license information.
- * For commercial licenses see https://www.tiny.cloud/
- *
- * Version: 5.0.0-1 (2019-02-04)
- */
 (function () {
 var hr = (function () {
-    'use strict';
+  'use strict';
 
-    var global = tinymce.util.Tools.resolve('tinymce.PluginManager');
+  var global = tinymce.util.Tools.resolve('tinymce.PluginManager');
 
-    var register = function (editor) {
-      editor.addCommand('InsertHorizontalRule', function () {
-        editor.execCommand('mceInsertContent', false, '<hr />');
-      });
-    };
-    var Commands = { register: register };
-
-    var register$1 = function (editor) {
-      editor.ui.registry.addButton('hr', {
-        icon: 'horizontal-rule',
-        tooltip: 'Horizontal line',
-        onAction: function () {
-          return editor.execCommand('InsertHorizontalRule');
-        }
-      });
-      editor.ui.registry.addMenuItem('hr', {
-        icon: 'horizontal-rule',
-        text: 'Horizontal line',
-        onAction: function () {
-          return editor.execCommand('InsertHorizontalRule');
-        }
-      });
-    };
-    var Buttons = { register: register$1 };
-
-    global.add('hr', function (editor) {
-      Commands.register(editor);
-      Buttons.register(editor);
+  var register = function (editor) {
+    editor.addCommand('InsertHorizontalRule', function () {
+      editor.execCommand('mceInsertContent', false, '<hr />');
     });
-    function Plugin () {
-    }
+  };
+  var $_598wgdc0jfuw8p00 = { register: register };
 
-    return Plugin;
+  var register$1 = function (editor) {
+    editor.addButton('hr', {
+      icon: 'hr',
+      tooltip: 'Horizontal line',
+      cmd: 'InsertHorizontalRule'
+    });
+    editor.addMenuItem('hr', {
+      icon: 'hr',
+      text: 'Horizontal line',
+      cmd: 'InsertHorizontalRule',
+      context: 'insert'
+    });
+  };
+  var $_7oq7jyc1jfuw8p02 = { register: register$1 };
+
+  global.add('hr', function (editor) {
+    $_598wgdc0jfuw8p00.register(editor);
+    $_7oq7jyc1jfuw8p02.register(editor);
+  });
+  function Plugin () {
+  }
+
+  return Plugin;
 
 }());
 })();

@@ -9,8 +9,8 @@
 //                                                   Дата создания:  23.01.2019
 // Copyright © 2019 tve                              Посл.изменение: 11.03.2019
 
-$page="/TinyMCE/Tiny.php";
+$page="/Tiny.php";
 //echo "Location: http://".$_SERVER['HTTP_HOST'].$page;
 Header("Location: http://".$_SERVER['HTTP_HOST'].$page);
 
-// *************************************************************** ittve.pw ***
+// ************************************************************** index.php ***

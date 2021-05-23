@@ -1,51 +1,38 @@
-/**
- * Copyright (c) Tiny Technologies, Inc. All rights reserved.
- * Licensed under the LGPL or a commercial license.
- * For LGPL see License.txt in the project root for license information.
- * For commercial licenses see https://www.tiny.cloud/
- *
- * Version: 5.0.0-1 (2019-02-04)
- */
 (function () {
 var print = (function () {
-    'use strict';
+  'use strict';
 
-    var global = tinymce.util.Tools.resolve('tinymce.PluginManager');
+  var global = tinymce.util.Tools.resolve('tinymce.PluginManager');
 
-    var register = function (editor) {
-      editor.addCommand('mcePrint', function () {
-        editor.getWin().print();
-      });
-    };
-    var Commands = { register: register };
-
-    var register$1 = function (editor) {
-      editor.ui.registry.addButton('print', {
-        icon: 'print',
-        tooltip: 'Print',
-        onAction: function () {
-          return editor.execCommand('mcePrint');
-        }
-      });
-      editor.ui.registry.addMenuItem('print', {
-        text: 'Print...',
-        icon: 'print',
-        onAction: function () {
-          return editor.execCommand('mcePrint');
-        }
-      });
-    };
-    var Buttons = { register: register$1 };
-
-    global.add('print', function (editor) {
-      Commands.register(editor);
-      Buttons.register(editor);
-      editor.addShortcut('Meta+P', '', 'mcePrint');
+  var register = function (editor) {
+    editor.addCommand('mcePrint', function () {
+      editor.getWin().print();
     });
-    function Plugin () {
-    }
+  };
+  var $_aw4li3irjfuw8pyd = { register: register };
 
-    return Plugin;
+  var register$1 = function (editor) {
+    editor.addButton('print', {
+      title: 'Print',
+      cmd: 'mcePrint'
+    });
+    editor.addMenuItem('print', {
+      text: 'Print',
+      cmd: 'mcePrint',
+      icon: 'print'
+    });
+  };
+  var $_kxfgeisjfuw8pye = { register: register$1 };
+
+  global.add('print', function (editor) {
+    $_aw4li3irjfuw8pyd.register(editor);
+    $_kxfgeisjfuw8pye.register(editor);
+    editor.addShortcut('Meta+P', '', 'mcePrint');
+  });
+  function Plugin () {
+  }
+
+  return Plugin;
 
 }());
 })();

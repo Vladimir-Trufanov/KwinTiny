@@ -1,101 +1,94 @@
-/**
- * Copyright (c) Tiny Technologies, Inc. All rights reserved.
- * Licensed under the LGPL or a commercial license.
- * For LGPL see License.txt in the project root for license information.
- * For commercial licenses see https://www.tiny.cloud/
- *
- * Version: 5.0.0-1 (2019-02-04)
- */
 (function () {
 var code = (function () {
-    'use strict';
+  'use strict';
 
-    var global = tinymce.util.Tools.resolve('tinymce.PluginManager');
+  var global = tinymce.util.Tools.resolve('tinymce.PluginManager');
 
-    var setContent = function (editor, html) {
-      editor.focus();
-      editor.undoManager.transact(function () {
-        editor.setContent(html);
-      });
-      editor.selection.setCursorLocation();
-      editor.nodeChanged();
-    };
-    var getContent = function (editor) {
-      return editor.getContent({ source_view: true });
-    };
-    var Content = {
-      setContent: setContent,
-      getContent: getContent
-    };
+  var global$1 = tinymce.util.Tools.resolve('tinymce.dom.DOMUtils');
 
-    var open = function (editor) {
-      var editorContent = Content.getContent(editor);
-      editor.windowManager.open({
-        title: 'Source Code',
-        size: 'large',
-        body: {
-          type: 'panel',
-          items: [{
-              type: 'textarea',
-              name: 'code'
-            }]
-        },
-        buttons: [
-          {
-            type: 'cancel',
-            name: 'cancel',
-            text: 'Cancel'
-          },
-          {
-            type: 'submit',
-            name: 'save',
-            text: 'Save',
-            primary: true
-          }
-        ],
-        initialData: { code: editorContent },
-        onSubmit: function (api) {
-          Content.setContent(editor, api.getData().code);
-          api.close();
-        }
-      });
-    };
-    var Dialog = { open: open };
+  var getMinWidth = function (editor) {
+    return editor.getParam('code_dialog_width', 600);
+  };
+  var getMinHeight = function (editor) {
+    return editor.getParam('code_dialog_height', Math.min(global$1.DOM.getViewPort().h - 200, 500));
+  };
+  var $_8n2vxo9hjfuw8oox = {
+    getMinWidth: getMinWidth,
+    getMinHeight: getMinHeight
+  };
 
-    var register = function (editor) {
-      editor.addCommand('mceCodeEditor', function () {
-        Dialog.open(editor);
-      });
-    };
-    var Commands = { register: register };
-
-    var register$1 = function (editor) {
-      editor.ui.registry.addButton('code', {
-        icon: 'sourcecode',
-        tooltip: 'Source code',
-        onAction: function () {
-          return Dialog.open(editor);
-        }
-      });
-      editor.ui.registry.addMenuItem('code', {
-        icon: 'sourcecode',
-        text: 'Source code',
-        onAction: function () {
-          return Dialog.open(editor);
-        }
-      });
-    };
-    var Buttons = { register: register$1 };
-
-    global.add('code', function (editor) {
-      Commands.register(editor);
-      Buttons.register(editor);
-      return {};
+  var setContent = function (editor, html) {
+    editor.focus();
+    editor.undoManager.transact(function () {
+      editor.setContent(html);
     });
-    function Plugin () {
-    }
+    editor.selection.setCursorLocation();
+    editor.nodeChanged();
+  };
+  var getContent = function (editor) {
+    return editor.getContent({ source_view: true });
+  };
+  var $_c8v5dw9jjfuw8ooz = {
+    setContent: setContent,
+    getContent: getContent
+  };
 
-    return Plugin;
+  var open = function (editor) {
+    var minWidth = $_8n2vxo9hjfuw8oox.getMinWidth(editor);
+    var minHeight = $_8n2vxo9hjfuw8oox.getMinHeight(editor);
+    var win = editor.windowManager.open({
+      title: 'Source code',
+      body: {
+        type: 'textbox',
+        name: 'code',
+        multiline: true,
+        minWidth: minWidth,
+        minHeight: minHeight,
+        spellcheck: false,
+        style: 'direction: ltr; text-align: left'
+      },
+      onSubmit: function (e) {
+        $_c8v5dw9jjfuw8ooz.setContent(editor, e.data.code);
+      }
+    });
+    win.find('#code').value($_c8v5dw9jjfuw8ooz.getContent(editor));
+  };
+  var $_8yugbi9gjfuw8oow = { open: open };
+
+  var register = function (editor) {
+    editor.addCommand('mceCodeEditor', function () {
+      $_8yugbi9gjfuw8oow.open(editor);
+    });
+  };
+  var $_5kgtxs9fjfuw8oov = { register: register };
+
+  var register$1 = function (editor) {
+    editor.addButton('code', {
+      icon: 'code',
+      tooltip: 'Source code',
+      onclick: function () {
+        $_8yugbi9gjfuw8oow.open(editor);
+      }
+    });
+    editor.addMenuItem('code', {
+      icon: 'code',
+      text: 'Source code',
+      onclick: function () {
+        $_8yugbi9gjfuw8oow.open(editor);
+      }
+    });
+  };
+  var $_ei78kz9kjfuw8op0 = { register: register$1 };
+
+  global.add('code', function (editor) {
+    $_5kgtxs9fjfuw8oov.register(editor);
+    $_ei78kz9kjfuw8op0.register(editor);
+    return {};
+  });
+  function Plugin () {
+  }
+
+  return Plugin;
 
 }());
 })();

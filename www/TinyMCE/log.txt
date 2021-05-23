@@ -1,1 +1,0 @@
-[21-May-2021 12:05:37 Asia/Kuwait] PHP Fatal error:  require_once(): Failed opening required 'C:\KwinTiny\www/Main.php' (include_path='.;C:\php\pear') in C:\KwinTiny\www\TinyMCE\Tiny.php on line 34
