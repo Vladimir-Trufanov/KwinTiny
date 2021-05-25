@@ -13,4 +13,6 @@ $page="/Tiny.php";
 //echo "Location: http://".$_SERVER['HTTP_HOST'].$page;
 Header("Location: http://".$_SERVER['HTTP_HOST'].$page);
 
+// Proba1
+
 // ************************************************************** index.php ***
