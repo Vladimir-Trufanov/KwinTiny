@@ -321,8 +321,8 @@ Caret=9,12
 TopLine=21
 Caret=45,29
 [www\Main.php]
-TopLine=47
-Caret=35,72
+TopLine=57
+Caret=59,78
 [www\iniMem.php]
 TopLine=1
 Caret=36,13
