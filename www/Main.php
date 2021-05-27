@@ -45,13 +45,14 @@ echo '
 ';
 // Подключаем TinyMCE
 echo '
-   <script src="/TinyMCE/tinymce.min.js"></script>
+   <script src="/TinyMCE5-8-1/tinymce.min.js"></script>
    <script>tinymce.init
    ({
         selector: "#mytextarea",
-        height: 420,
+        height: 520,
         width:  820,
         content_css: "/Styles/TinyMCE.css",
+        /*
         plugins:
         [ 
             "advlist autolink link image imagetools lists charmap print preview hr anchor",
@@ -60,17 +61,24 @@ echo '
             "save table contextmenu directionality emoticons template paste",
             "textcolor"
         ],
+        */
         language: "ru",
+        /*
         toolbar:
         [
             "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons"
         ],
-        a_plugin_option: true,
+        */
+        /*a_plugin_option: true,*/
         a_configuration_option: 400
    });
    </script>
 ';   
 ?>
+
+   <script>
+    console.log("Привет!");
+   </script>
     
 </head>
 
