@@ -19,47 +19,38 @@
    background:transparent;
    align-items:center;
 }
-/*
-#uploadiImage
-{
-   width:100%;
-}
-*/
 .Card, .bCard, .imgCard, .pCard, .taCard
 {
-   width:100%
+   background:transparent;
 }
 .Card
 {
-   background:#E2ECE4;
-   /*border:.4rem double gray;*/
-   /* расстояние между карточками */
-   /*margin-bottom:.2rem;*/  
+   border:.4rem double gray;
+   margin-bottom:.2rem;  
 }
 .bCard
 {
-   background:transparent;
    cursor:pointer;
+   margin:0;
+	padding:.1rem; 
+   border:0;
 }
 .imgCard
 {
-   background:transparent;
-   /*width:100%;*/
+   width:100%;
 }
-.pCard
+.pCard, .taCard 
 {
-   background:transparent; 
-   font-size:1.4rem; 
-   text-align: center;
-   /*
-   padding:.1rem .5rem .1rem .5rem;
-   margin-bottom:.4rem;
-   */
+   font-size:1rem; 
+   text-align:center;
+   margin:0;
+	padding:.1rem; 
+   border:0;
 }
 .taCard
 {
-   /*width:100%;*/
    height:10rem;
+   width:100%;
 }
 .Card:hover 
 {

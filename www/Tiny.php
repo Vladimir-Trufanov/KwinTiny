@@ -44,53 +44,28 @@ catch (E_EXCEPTION $e)
 function GViewImage($FileName,$Comment,$AreaText=false,$Action='Image')
 {
    echo 
-      '<div class="Card"> '.
+      '<div class="Card">'.
+      '<p class="pCard" id="pName">Имя файла</p>'.
       '<button class="bCard" type="submit" name="'.$Action.'" value="'.$FileName.'">'.
       '<img class="imgCard" src="'.$FileName.'" alt="'.$FileName.'">'.
       '</button>';
-   // Выводим существующий комментарий или 
-   // текст для редактирования
-   /*
-   if ($AreaText) 
-   {
-      echo '
-         <textarea class="taCard" name="aream">Текст комментария к картинке</textarea>
-         ';
-   }
-   else 
-   */
    echo '<p class="pCard">'.$Comment.'</p>';
    echo 
       '</div>';
 }
 function GLoadImage($FileName,$Comment,$AreaText=false,$Action='Image')
 {
-   /*
    ?>
-   <!-- -->
-   <div class="Card">
-   <input type="file" name="image" id="image">
-   <img class="imgCard" src="sampo.jpg" alt="FileName">
-   <input type="submit" name="upload" id="upload" value="Upload">
-   <textarea class="taCard" name="aream">Текст комментария к картинке</textarea>
-   </div>
-   <?php
-   */
-      ?>
-   <!-- -->
    <div class="Card">
    <button class="bCard" type="submit" name="upload" value="FileName">
-   <input type="hidden" name="MAX_FILE_SIZE" value="57200">
-   <input type="file" name="image" id="image">
+   <input type="hidden" name="MAX_FILE_SIZE" value="57200" id="inhCard">
+   <input type="file" name="image" id="image" id="infCard">
+   <input type="submit" name="UploadImg" id="upload" value="Загрузить">
    <img class="imgCard" src="sampo.jpg" alt="FileName">
-   <!-- 
-   <input type="submit" name="upload" id="upload" value="Upload">
-   -->
    </button>
    <textarea class="taCard" name="aream">Текст комментария к картинке</textarea>
    </div>
    <?php
-
 }
 
-// *************************************************************** Tiny.php ***
+// *** <!-- --> ************************************************** Tiny.php ***

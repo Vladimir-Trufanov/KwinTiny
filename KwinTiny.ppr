@@ -17,7 +17,7 @@ HTServer=localhost
 Extensions=*.*
 [Project tree]
 KwinTiny
-	-KwinTiny
+	+KwinTiny
 		-Proba
 			-www
 				-images
@@ -55,7 +55,7 @@ KwinTiny
 				Proba\www\get_filename.php
 				Proba\www\index.php
 			Proba\Proba.ppr
-		-www
+		+www
 			-Images
 				www\Images\Kwinflat.jpg
 			-KwinTiny
@@ -71,7 +71,7 @@ KwinTiny
 				www\KwinTiny\Гошан.jpg
 			-Ps2
 				www\Ps2\Upload.php
-			-Styles
+			+Styles
 				www\Styles\Gallery.css
 				www\Styles\KwinTiny.css
 				www\Styles\Styles.css
@@ -552,50 +552,14 @@ KwinTiny
 		README.md
 		web.config
 [Open project files]
-0=www\index.php
-1=www\Tiny.php
-2=www\iniMem.php
-3=www\Styles\KwinTiny.css
-4=www\Styles\TinyMCE.css
-5=www\Ps2\Upload.php
-6=www\KwinTiny\GalleryNews.php
-7=www\Main.php
-8=www\Styles\Gallery.css
-9=www\UploadImg.php
-10=www\Styles\Styles.css
+0=www\Main.php
+1=www\UploadImg.php
 [Selected Project Files]
 Main=
-Selected=www\Styles\Gallery.css
-[www\index.php]
-TopLine=1
-Caret=9,12
-[www\Tiny.php]
-TopLine=72
-Caret=1,75
-[www\iniMem.php]
-TopLine=1
-Caret=36,13
-[www\Styles\KwinTiny.css]
-TopLine=1
-Caret=1,1
-[www\Styles\TinyMCE.css]
-TopLine=29
-Caret=1,1
-[www\Ps2\Upload.php]
-TopLine=1
-Caret=1,1
-[www\KwinTiny\GalleryNews.php]
-TopLine=4
-Caret=83,13
+Selected=www\Main.php
 [www\Main.php]
-TopLine=27
-Caret=66,46
-[www\Styles\Gallery.css]
-TopLine=45
-Caret=19,61
+TopLine=1
+Caret=10,18
 [www\UploadImg.php]
-TopLine=77
-Caret=1,1
-[www\Styles\Styles.css]
-TopLine=95
-Caret=1,104
+TopLine=81
+Caret=1,98
