@@ -1,0 +1,73 @@
+/* HTML5/CSS3, EDGE/CHROME                            *** Gallery-Image.css ***
+
+ ******************************************************************************
+ * ittve.me            Определить стили галлереи, определить стили для показа *
+ *         изображения, выбранной в галерее картинки, на отдельной странице в *
+ *                                       ее рамках или в натуральную величину *
+ ******************************************************************************
+
+                                                     Автор:       Труфанов В.Е.
+                                                     Дата создания:  07.01.2019
+ Copyright © 2019 tve                                Посл.изменение: 18.11.2020
+*/
+
+/**
+ *  Cтили картинок, изображений в галлерее
+**/
+#NewGallery
+{
+   background:transparent;
+   align-items:center;
+}
+/*
+#uploadiImage
+{
+   width:100%;
+}
+*/
+.Card, .bCard, .imgCard, .pCard, .taCard
+{
+   width:100%
+}
+.Card
+{
+   background:#E2ECE4;
+   /*border:.4rem double gray;*/
+   /* расстояние между карточками */
+   /*margin-bottom:.2rem;*/  
+}
+.bCard
+{
+   background:transparent;
+   cursor:pointer;
+}
+.imgCard
+{
+   background:transparent;
+   /*width:100%;*/
+}
+.pCard
+{
+   background:transparent; 
+   font-size:1.4rem; 
+   text-align: center;
+   /*
+   padding:.1rem .5rem .1rem .5rem;
+   margin-bottom:.4rem;
+   */
+}
+.taCard
+{
+   /*width:100%;*/
+   height:10rem;
+}
+.Card:hover 
+{
+   color: #993300; 
+   font-weight: 600;
+}
+/*
+ ******************************************************** Gallery-Image.css ***
+*/	
+	
+

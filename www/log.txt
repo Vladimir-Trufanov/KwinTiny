@@ -1,3 +1,7 @@
 [26-May-2021 19:58:06 Asia/Kuwait] PHP Parse error:  syntax error, unexpected 'input' (T_STRING), expecting ',' or ';' in C:\KwinTiny\www\Main.php on line 78
 [26-May-2021 19:59:54 Asia/Kuwait] PHP Parse error:  syntax error, unexpected 'input' (T_STRING), expecting ',' or ';' in C:\KwinTiny\www\Main.php on line 78
 [26-May-2021 20:13:19 Asia/Kuwait] PHP Parse error:  syntax error, unexpected 'uploadimage' (T_STRING), expecting ',' or ';' in C:\KwinTiny\www\Main.php on line 71
+[27-May-2021 14:45:01 Asia/Kuwait] PHP Fatal error:  require_once(): Failed opening required 'C:\KwinTiny\www/Upload/UploadImg.php' (include_path='.;C:\php\pear') in C:\KwinTiny\www\Main.php on line 120
+[27-May-2021 14:45:39 Asia/Kuwait] PHP Fatal error:  require_once(): Failed opening required 'C:\KwinTiny\wwwUploadImg.php' (include_path='.;C:\php\pear') in C:\KwinTiny\www\Main.php on line 120
+[28-May-2021 12:29:57 Asia/Kuwait] PHP Fatal error:  require_once(): Failed opening required 'KwinTyny/GalleryNews.php' (include_path='.;C:\php\pear') in C:\KwinTiny\www\Main.php on line 120
+[28-May-2021 14:08:07 Asia/Kuwait] PHP Fatal error:  require_once(): Failed opening required 'KwinTyny/GalleryNews.php' (include_path='.;C:\php\pear') in C:\KwinTiny\www\Main.php on line 132

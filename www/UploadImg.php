@@ -47,14 +47,9 @@
 $MaxLoadSize = 900200;
 if (isset($_POST['UploadImg'])) 
 {
-   // Решение 00
-   // move the file to the upload folder and rename it
-   // echo '***'.$destination.$_FILES['image']['name'].'***';
-   //move_uploaded_file($_FILES['image']['tmp_name'], $DirImg.$_FILES['image']['name']);
 
-   // Решение 01
    $destination = $DirImg;
-   echo '***'.$destination.'***';
+   // echo '***'.$destination.'***';
    require_once $SiteRoot."/Ps2/Upload.php";
    try 
    {
@@ -72,12 +67,14 @@ if (isset($_POST['UploadImg']))
 // Выводим возможные сообщения от объекта $upload
 if (isset($result)) 
 {
+   /*
    echo '<ul>';
    foreach ($result as $message) 
    {
-      echo "<li>$message</li>";
+      echo "<li>===$message===</li>";
    }
    echo '</ul>';
+   */
 }
 
 
@@ -106,7 +103,7 @@ if (isset($result))
 <!-- -->
 <?php
 if (isset($_POST['UploadImg'])) {
-  print_r($_FILES);
+  // print_r($_FILES);
 }
 ?>
 </pre>

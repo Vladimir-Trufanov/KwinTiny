@@ -43,7 +43,7 @@ echo '
    <link rel="stylesheet" type="text/css" href="/Styles/Styles.css">
    <!-- theme: "modern", -->
 ';
-echo '<link rel="stylesheet" type="text/css" href="Styles/Gallery.css">';
+echo '<link rel="stylesheet" type="text/css" href="Styles/Gallery-Image.css">';
 // Подключаем TinyMCE
 echo '
    <script src="/TinyMCE5-8-1/tinymce.min.js"></script>
@@ -94,12 +94,10 @@ echo '
 echo '
    </head>
    <body>
-   <div id="NewGallery">
-'; 
-require_once "KwinTiny/GalleryNews.php";
-echo '
+   <div class="Header">
    </div>
    <div class="Info">
+   <div class="InfoLeft">
 '; 
 // Извлекаем прежнее содержимое материала в переменную $contents
 $filename=$DirImg."textfile.html"; 
@@ -108,10 +106,6 @@ $contents = fread($handle, filesize($filename));
 fclose($handle);
 // Помещаем значение переменной в область редактирования TinyMCE
 echo '
-   <div class="Header">
-   Header
-   </div>
-   <div class="WorkTiny">
    <form id="frmTinyText" method="post" action="/Tiny.php">
    <textarea id="mytextarea" name="dor">
 '; 
@@ -120,13 +114,20 @@ echo '
    </textarea>
    </form>
 '; 
-// Подключаем загрузку      
 require_once $SiteRoot."/UploadImg.php";
-// --- разметка ---    
 echo '
    </div>
-   <div class="Messages">
-   Messages
+   <div class="InfoRight">
+   <div id="NewGallery">
+'; 
+   require_once "KwinTiny/GalleryNews.php";
+echo '
+   </div>
+'; 
+// Подключаем загрузку      
+// require_once $SiteRoot."/UploadImg.php";
+// --- разметка ---    
+echo '
    </div>
    </div>
 '; 
@@ -134,8 +135,7 @@ echo '
 echo '
    <div class="Footer">
    <div class="LeftFooter">
-      "Kwinflat-близкий всем!"
-      <!-- <img id="KwinLogo" src="../Images/Kwinflat.jpg" alt="Kwinflat-близкий всем!"/> -->
+      <img id="KwinLogo" src="../Images/Kwinflat.jpg" alt="Kwinflat-близкий всем!"/>
    </div>
    <div class="RightFooter">
       Copyright &copy; Владимир Труфанов
@@ -143,11 +143,11 @@ echo '
       <input type="submit" name="enter" value="Сохранить материал" form="frmTinyText">
       </p>
    </div>
-   </div>
 '; 
 echo '
+   </div>
 '; 
-// Завершаем разметку документа (.Info)
+// Завершаем разметку документа
 echo '
    </body>
    </html>

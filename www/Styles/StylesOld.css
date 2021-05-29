@@ -15,51 +15,42 @@
 html
 {
    font-family:'Anonymous Pro',monospace;
-   font-size:16px;
+   font-size:10px;
 }
 /** 
   Устанавливаем размеры шрифтов по умолчанию 
 */
 body 
 {
-   height: 100%;
-   font-size:1rem; 
+   font-size:1rem;  
+   /*background:blue;*/
 }
-/** 
-  Выравниваем 
-*/
-html, body, .Info, .Header, .WorkTiny, .Messages, .Footer
-{
-	margin:0;
-	padding:0;
-	border:0;
-	vertical-align:baseline;
-}
-/**
-  Для отладки расскрашиваем дивы
-*/
-body{background:aqua;} 
-.Info{background:yellow;}
-#NewGallery{background:magenta;}
-.Header,.Footer{background:red;}
-.WorkTiny{background:gray;}
-.Messages{background:green;}
-.LeftFooter{background:purple;}
-.RightFooter{background:olive;}
 /**
   Позиционируем секции редактора
 */
-.Info, .Footer
-{
-   position:fixed; 
-   width:69.7%;
-}
 .Info
 {
-   top:0;
-   left:0;
-   height:91.7%;
+   height:92%;
+   /*background:red;*/     
+}
+.InfoLeft
+{
+   position:fixed; 
+   width:69%;
    float:left;
+   /*background:green;*/ 
+}
+.InfoRight
+{
+   float:right;
+   text-align:right;
+   /*background:yellow;*/
+   /*height:30%;*/
+   width:30%;
+  
+}
+.InfoLeft, .InfoRight
+{
 }
 /**
   Позиционируем секции подвала
@@ -67,43 +58,28 @@ body{background:aqua;}
 .Footer
 {
    height:8%;
+   /*width:100%; */
+   position:fixed;
    bottom:0;
-   left:0;
 }
 #KwinLogo
 {
-	/*display:block;
-   height:8%;*/
-   /*width:100%;*/
+   height:100%;
 }
 .LeftFooter
 {
    height:100%;
    width:24%;
    float:left;
+   /*background:yellow;*/ 
 }
 .RightFooter
 {
    height:100%;
    width:76%;
    float:right;
+   /*background:green;*/ 
 }
-/**
-  Форматируем содержимое
-*/
-.Header
-{
-   font-size:1rem;
-   font-weight:bold; 
-   background:transparent; 
-   text-align:center;
-}
-#NewGallery
-{
-   float:right;
-   width:30%;
-}
-
 /*
  *************************************************************** Styles.css ***
 */	
