@@ -45,7 +45,6 @@ function GViewImage($FileName,$Comment,$AreaText=false,$Action='Image')
 {
    echo 
       '<div class="Card">'.
-      '<p class="pCard" id="pName">Имя файла</p>'.
       '<button class="bCard" type="submit" name="'.$Action.'" value="'.$FileName.'">'.
       '<img class="imgCard" src="'.$FileName.'" alt="'.$FileName.'">'.
       '</button>';
@@ -53,19 +52,48 @@ function GViewImage($FileName,$Comment,$AreaText=false,$Action='Image')
    echo 
       '</div>';
 }
+// ****************************************************************************
+// *                Вывести одну карточку галереи c кнопкой удаления          *
+// ****************************************************************************
+function GVieDelImage($FileName,$Comment,$AreaText=false,$Action='Image')
+{
+   /**
+    * Функция может быть вызвана в двух режимах: просмотра и редактирования.
+    * В режиме редактирования указывается имя файла и появляется кнопка 
+    * на удаление файла.
+   **/
+   echo 
+      '<div class="Card">'.
+      '<form id="frmTinyDel" method="get" action="/Tiny.php">'.
+      '<p class="pCard" id="pName">'.$FileName.'</p>'.
+      '<img class="imgCard" src="'.$FileName.'" alt="'.$FileName.'">'.
+      '<button class="ibCard" type="submit" name="DelImg" value="'.$FileName.'"></button>';
+   echo '<p class="pCard">'.$Comment.'</p>';
+   echo 
+      '</form>'.
+      '</div>';
+}
 function GLoadImage($FileName,$Comment,$AreaText=false,$Action='Image')
 {
-   ?>
+   /**
+    * Размещаем в форме поле для загрузки файла, а перед ним (иначе не будет
+    * работать) поле для контроля размера загружаемого файла. 
+    * Преимущество скрытого поля с именем MAX_FILE_SIZE в том, что PHP остановит
+    * процесс загрузки файла при превышении размера
+   **/
+   echo '
    <div class="Card">
-   <button class="bCard" type="submit" name="upload" value="FileName">
+   <form action="" method="get" enctype="multipart/form-data" id="uploadiImage">
+   <!-- <button class="bCard" type="submit" name="upload" value="FileName"> --> 
    <input type="hidden" name="MAX_FILE_SIZE" value="57200" id="inhCard">
    <input type="file" name="image" id="image" id="infCard">
    <input type="submit" name="UploadImg" id="upload" value="Загрузить">
    <img class="imgCard" src="sampo.jpg" alt="FileName">
-   </button>
+   <!-- </button> --> 
    <textarea class="taCard" name="aream">Текст комментария к картинке</textarea>
+   </form>
    </div>
-   <?php
+   ';
 }
 
 // *** <!-- --> ************************************************** Tiny.php ***

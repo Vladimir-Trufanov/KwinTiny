@@ -9,6 +9,10 @@
 //                                                   Дата создания:  23.11.2018
 // Copyright © 2018 tve                              Посл.изменение: 19.04.2021
 
+// Подключаем файлы библиотеки прикладных модулей:
+$TPhpPrown=$SiteHost.'/TPhpPrown';
+require_once $TPhpPrown."/TPhpPrown/ViewGlobal.php";
+
 // Инициируем рабочие переменные
 require_once $SiteRoot."/iniMem.php";
 
@@ -16,7 +20,6 @@ require_once $SiteRoot."/iniMem.php";
 if(isset($_POST['enter']))
 {
    // Открыть текстовый файл
-   //$f = fopen("../KwinTiny/textfile.html","w");
    $f = fopen("KwinTiny/textfile.html","w");
    // Записать текст
    fwrite($f, $_POST['dor']); 
@@ -112,7 +115,7 @@ echo '
    Header
    </div>
    <div class="WorkTiny">
-   <form id="frmTinyText" method="post" action="/Tiny.php">
+   <form id="frmTinyText" method="get" action="/Tiny.php">
    <textarea id="mytextarea" name="dor">
 '; 
 echo htmlspecialchars($contents);
@@ -120,13 +123,9 @@ echo '
    </textarea>
    </form>
 '; 
-// Подключаем загрузку      
+// Подключаем загрузку  
 require_once $SiteRoot."/UploadImg.php";
-// --- разметка ---    
 echo '
-   </div>
-   <div class="Messages">
-   Messages
    </div>
    </div>
 '; 

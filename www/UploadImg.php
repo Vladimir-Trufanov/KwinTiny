@@ -78,35 +78,24 @@ if (isset($result))
 }
 
 
-
+/*
 ?>
-
 <form action="" method="post" enctype="multipart/form-data" id="uploadImage">
    <label for="image">Выбрать изображение</label>
-   <?php
-   /**
-    * Размещаем в форме поле для загрузки файла, а перед ним (иначе не будет
-    * работать) поле для контроля размера загружаемого файла. 
-    * Преимущество скрытого поля с именем MAX_FILE_SIZE в том, что PHP остановит
-    * процесс загрузки файла при превышении размера
-   **/
-   ?>
    <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $MaxLoadSize; ?>">
    <input type="file" name="image" id="image">
    <p>
    <input type="submit" name="UploadImg" id="upload" value="Загрузить">
    </p>
 </form>
-
-<pre>
-
-<!-- -->
 <?php
-if (isset($_POST['UploadImg'])) {
-  // print_r($_FILES);
+*/
+if (isset($_POST['UploadImg'])) 
+{
+  prown\ViewGlobal(avgREQUEST);
+  echo '<pre>';
+  print_r($_FILES);
+  echo '</pre>';
+
 }
-?>
-</pre>
-
-<?php
-// ********************************************************** UploadImg.php ***
+// *** <!-- --> ********************************************* UploadImg.php ***

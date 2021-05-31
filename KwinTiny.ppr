@@ -58,7 +58,7 @@ KwinTiny
 		+www
 			-Images
 				www\Images\Kwinflat.jpg
-			-KwinTiny
+			+KwinTiny
 				www\KwinTiny\2018-07-27 Надел что смог1.jpg
 				www\KwinTiny\GalleryNews.php
 				www\KwinTiny\goshan.jpg
@@ -69,7 +69,7 @@ KwinTiny
 				www\KwinTiny\proba.jpg
 				www\KwinTiny\textfile.html
 				www\KwinTiny\Гошан.jpg
-			-Ps2
+			+Ps2
 				www\Ps2\Upload.php
 			+Styles
 				www\Styles\Gallery.css
@@ -403,7 +403,7 @@ KwinTiny
 					-noneditable
 						www\TinyMCE5-8-1\plugins\noneditable\plugin.js
 						www\TinyMCE5-8-1\plugins\noneditable\plugin.min.js
-					-pagebreak
+					-y ge??  k
 						www\TinyMCE5-8-1\plugins\pagebreak\plugin.js
 						www\TinyMCE5-8-1\plugins\pagebreak\plugin.min.js
 					-paste
@@ -534,7 +534,6 @@ KwinTiny
 			www\iniWorkSpace.php
 			www\log.txt
 			www\Main.php
-			www\MainOld.php
 			www\sampo.jpg
 			www\Tiny.php
 			www\UploadImg.php
@@ -554,12 +553,36 @@ KwinTiny
 [Open project files]
 0=www\Main.php
 1=www\UploadImg.php
+2=www\Styles\Gallery.css
+3=www\Tiny.php
+4=www\index.php
+5=www\KwinTiny\GalleryNews.php
+6=www\Styles\Styles.css
+7=www\Ps2\Upload.php
 [Selected Project Files]
 Main=
-Selected=www\Main.php
+Selected=www\KwinTiny\GalleryNews.php
 [www\Main.php]
-TopLine=1
-Caret=10,18
+TopLine=114
+Caret=1,119
 [www\UploadImg.php]
-TopLine=81
-Caret=1,98
+TopLine=65
+Caret=1,95
+[www\Styles\Gallery.css]
+TopLine=9
+Caret=1,21
+[www\Tiny.php]
+TopLine=65
+Caret=79,70
+[www\index.php]
+TopLine=1
+Caret=1,1
+[www\KwinTiny\GalleryNews.php]
+TopLine=1
+Caret=13,14
+[www\Styles\Styles.css]
+TopLine=29
+Caret=1,52
+[www\Ps2\Upload.php]
+TopLine=1
+Caret=1,1
